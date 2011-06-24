@@ -1,7 +1,9 @@
-<html>
-	<body>
-		Blog do Alatazan
-		<h1>{{artigo.titulo}}</h1>
-		{{artigo.conteudo}}
-	</body>
-</html>
+{%extends 'base.html'%}
+
+{%block titulo%} {{artigo.titulo}} - {{block.super}} {%endblock%}
+
+{%block h1%} {{artigo.titulo}}{%endblock%}
+
+{%block conteudo%}
+	{{artigo.conteudo}}
+{%endblock%}
