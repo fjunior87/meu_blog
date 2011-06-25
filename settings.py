@@ -101,6 +101,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'meu_blog.urls'
@@ -118,6 +119,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 	'django.contrib.admin',
 	'django.contrib.syndication',
+	'django.contrib.flatpages',
+	
 	'blog',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
