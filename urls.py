@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 	url(r'^artigo/(?P<artigo_id>\d+)/$','blog.views.artigo'),
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^media/(.*)$','django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
+	url(r'^contato/$','views.contato'),
     # Examples:
     # url(r'^$', 'meu_blog.views.home', name='home'),
     # url(r'^meu_blog/', include('meu_blog.foo.urls')),
