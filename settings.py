@@ -120,7 +120,7 @@ INSTALLED_APPS = (
 	'django.contrib.admin',
 	'django.contrib.syndication',
 	'django.contrib.flatpages',
-	
+	'django.contrib.comments',
 	'blog',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
