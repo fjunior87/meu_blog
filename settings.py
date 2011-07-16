@@ -2,8 +2,8 @@
 import os
 PROJECT_ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
 
-
-DEBUG = True
+LOCAL = False
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -104,7 +104,7 @@ MIDDLEWARE_CLASSES = (
 	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
-ROOT_URLCONF = 'meu_blog.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT_PATH, 'templates'),
@@ -156,3 +156,9 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
+try:
+	from local_settings import *
+except ImportError:
+	pass
+
+

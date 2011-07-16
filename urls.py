@@ -13,7 +13,6 @@ urlpatterns = patterns('',
 	{'feed_dict': {'ultimos': UltimosArtigos}}),
 	url(r'^artigo/(?P<artigo_id>\d+)/$','blog.views.artigo'),
 	url(r'^admin/', include(admin.site.urls)),
-	url(r'^media/(.*)$','django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
 	url(r'^contato/$','views.contato'),
 	url(r'^comments/',include('django.contrib.comments.urls')),
     # Examples:
@@ -26,3 +25,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 )
+
+if settings.LOCAL:
+	urlpatterns += patterns('',
+		url(r'^media/(.*)$','django.views.static.serve',{'document_root': settings.MEDIA_ROOT})
+	)
